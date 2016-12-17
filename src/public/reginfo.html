@@ -1,0 +1,16 @@
+<span ng-if='infoCtrl.noInfo()'>Not Signed Up Yet. <a ui-sref = 'public.signup'>Sign up Now!</a></span>
+<div class=''container ng-if='!infoCtrl.noInfo()' style="margin-left: 20px">
+<h1>User's info:</h1>
+<span>First Name:</span> {{infoCtrl.regInfo.firstName}}<br>
+<span>Last Name:</span> {{infoCtrl.regInfo.secondName}}<br>
+<span>Email:</span> {{infoCtrl.regInfo.email}}<br>
+<span ng-if='infoCtrl.regInfo.phone'>Phone:</span> {{infoCtrl.regInfo.phone}}<br>
+
+<h1> Favorite dish:</h1>
+<h2>{{infoCtrl.regInfo.favoriteItem.name}}</h2>
+{{infoCtrl.regInfo.favoriteItem.short_name}}
+<img class="img-responsive" width="30%" height="30%" ng-src="https://restaurant-angular.herokuapp.com/images/{{infoCtrl.regInfo.favoriteItem.short_name}}.jpg" alt="{{infoCtrl.regInfo.favoriteItem.name}}">
+   
+<p>{{infoCtrl.regInfo.favoriteItem.description}}</p>
+
+</div>
